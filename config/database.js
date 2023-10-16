@@ -7,7 +7,12 @@ const connectDB = async () => {
   // Opening for Try Catch
   try {
     // await to process the env file database string
-    const conn = await mongoose.connect(`${process.env.DB_STRING}`);
+    const conn = await mongoose.connect(`${process.env.DB_STRING}`, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true,
+    });
 
     console.log(`MongoDB Connected: ${conn.connection.host}`); // Console log to tell us MongoDB is connected
     // Opening for Catch
