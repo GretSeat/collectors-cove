@@ -1,5 +1,6 @@
 // Core Modules
 const mongoose = require("mongoose"); // Requiring Mongoose
+require("dotenv").config({ path: "./config/.env" });
 
 // Begin of connectDB async function
 const connectDB = async () => {
