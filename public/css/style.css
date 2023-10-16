@@ -1,3 +1,6 @@
 body {
   background-color: lightyellow;
 }
+a {
+  text-decoration: none;
+}
