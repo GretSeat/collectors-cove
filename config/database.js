@@ -6,12 +6,7 @@ const connectDB = async () => {
   // Opening for Try Catch
   try {
     // await to process the env file database string
-    const conn = await mongoose.connect(process.env.DB_STRING, {
-      useNewUrlParser: true, // Mongoose Deprecation Fixes
-      useUnifiedTopology: true, // Mongoose Deprecation Fixes
-      useFindAndModify: false, // Mongoose Deprecation Fixes
-      useCreateIndex: true, // Mongoose Deprecation Fixes
-    });
+    const conn = await mongoose.connect(process.env.DB_STRING);
 
     console.log(`MongoDB Connected: ${conn.connection.host}`); // Console log to tell us MongoDB is connected
     // Opening for Catch
