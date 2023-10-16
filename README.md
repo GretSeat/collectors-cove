@@ -2,7 +2,7 @@
 
 This is a place for Board Game Collectors to get together, and share photos with each other about the various board games they have in their collections, they can also like, and comment on posts from others.
 
-**Link to project:** http://recruiters-love-seeing-live-demos.com/
+**Link to project:** https://collectors-cove.onrender.com/
 
 ![alt tag](/public/imgs/collector's%20cove.png)
 
