@@ -30,22 +30,50 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <%- include('partials/header') -%>
+    <!-- NAV BAR PARTIAL -->
+    <%- include("partials/navbar.ejs") -%>
 
-    <div class="container">
-      <div class="row justify-content-center mt-5">
-        <ul class="row list-unstyled">
-          <% for(var i=0; i < posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>" />
-            </a>
-          </li>
-          <% } %>
-        </ul>
+    <!-- POSTS -->
+    <div class="container d-flex flex-column align-items-center">
+      <% for(var i=0; i < posts.length; i++) {%>
+
+      <div class="card mb-3" style="width: 50rem">
+        <a href="/post/<%= posts[i]._id%>">
+          <img
+            src="<%= posts[i].image%>"
+            class="card-img-top"
+            alt="Post Image"
+          />
+        </a>
+        <div class="card-body">
+          <h5 class="card-title"><%= posts[i].title %></h5>
+          <p class="card-text"><%= posts[i].caption %></p>
+
+          <!-- CARD FOOTER -->
+          <div class="card-footer">
+            <a
+              href="/post/<%= posts[i]._id%>"
+              type="button"
+              class="btn btn-primary btn-sm"
+              ><i class="fa fa-heart"></i> Like</a
+            >
+            <a
+              href="/post/<%= posts[i]._id%>"
+              type="button"
+              class="btn btn-primary btn-sm"
+              ><i class="fa fa-comment"></i> Comment</a
+            >
+          </div>
+        </div>
       </div>
+      <% } %>
     </div>
-
+    <!-- FOOTER PARTIAL -->
     <%- include('partials/footer') -%>
+    <!-- FA STUFF? -->
+    <script
+      src="https://kit.fontawesome.com/b43dbbfc80.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
