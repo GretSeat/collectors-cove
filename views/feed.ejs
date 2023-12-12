@@ -29,19 +29,22 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <body>
+  <body class="background-color">
     <!-- NAV BAR PARTIAL -->
     <%- include("partials/navbar.ejs") -%>
 
     <!-- POSTS -->
-    <div class="container d-flex flex-column align-items-center">
+    <div
+      class="container d-flex flex-column align-items-center"
+      style="padding-top: 60px"
+    >
       <% for(var i=0; i < posts.length; i++) {%>
 
       <div class="card mb-3" style="width: 50rem">
         <a href="/post/<%= posts[i]._id%>">
           <img
             src="<%= posts[i].image%>"
-            class="card-img-top"
+            class="card-img-top img-fluid"
             alt="Post Image"
           />
         </a>
@@ -66,6 +69,7 @@
           </div>
         </div>
       </div>
+
       <% } %>
     </div>
     <!-- FOOTER PARTIAL -->
