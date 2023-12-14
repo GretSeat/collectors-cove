@@ -33,52 +33,54 @@
 
   <%- include('partials/navbar') -%>
 
-  <div class="container border border-danger" style="padding-top: 56px">
-    <div class="row mt-5 border border-secondary"> 
-        <div class="col-6 border border-primary">
-            <div>
-                <p><strong>User Name</strong>: <%= user.userName %></p> <!-- p Tag Holding the Username given from Database-->
-                <p><strong>Email</strong>: <%= user.email %></p> <!-- p tag holding Email given from Database-->
-                <a href="/logout" class="col-3 btn btn-primary">Logout</a> 
+  <!-- CONTENT BOX -->
+    <main class="container" style="padding-top: 56px"> 
+      <div class="profile container pt-2 d-flex">
+      <!-- ADD POST CONTAINER -->
+        <div class="post-container col-4 border border-primary p-2">
+          <!-- USER NAME / EMAIL CONTAINER -->
+            <div class="container d-flex justify-content-center border">
+              <div class="v-stack text-center pb-2">
+                <h2><strong><%= user.userName %></strong></h2> <!-- p Tag Holding the Username given from Database-->
+                <span><small><%= user.email %></small></span> <!-- p tag holding Email given from Database-->
+                <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a>  -->
+              </div>
+                
             </div> 
-            <div class="mt-5"> 
-              <h2>Add a post</h2> 
+            <!-- ADD A POST -->
+            <div class="container"> 
+              <h4>Upload a photo?</h4> 
               <form action="/post/createPost" enctype="multipart/form-data" method="POST"> 
                 <div class="mb-3"> 
-                    <label for="title" class="form-label">Title</label> <!-- Title Label for Input -->
-                    <input type="text" class="form-control" id="title" name="title"> <!-- Input for adding the Post Title -->
+                    <!-- <label for="title" class="form-label"></label> Title Label for Input -->
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Title"> <!-- Input for adding the Post Title -->
                 </div> 
                 <div class="mb-3"> 
                   <label for="caption" class="form-label">Caption</label> 
-                  <textarea class="form-control" id="caption" name="caption"></textarea> <!-- Text Area for Adding Photo Caption -->
+                  <textarea class="form-control" id="caption" name="caption" placeholder="Tell us all about your new game!"></textarea> <!-- Text Area for Adding Photo Caption -->
                 </div>
                 <div class="mb-3"> 
                   <label for="imgUpload" class="form-label">Image</label> <!-- Image Label for Input-->
                   <input type="file" class="form-control" id="imageUpload" name="file"> <!-- Input Area for Image Upload-->
                 </div> 
-                <button type="submit" class="btn btn-primary" value="Upload">Submit</button> 
+                <!-- RETURN TO FEED BUTTON -->
+                <div class="d-flex justify-content-around"> 
+                  <a class="btn btn-primary" href="/feed">Return to Feed</a> 
+                  <button type="submit" class="btn btn-primary" value="Upload">Post Now</button>
+              </div>  
               </form> 
             </div> 
-        </div> 
+        </div>         
         <!-- IMAGES -->
-        <div class="row row-cols-4 border border-danger"> 
-          <ul class=" list-group list-group-horizontal list-unstyled"> 
-          <% for(var i=0; i<posts.length; i++) { %> <!-- For Loop Getting All Posts -->
-            <li class="col justify-content-between mt-3"> 
-              <a href="/post/<%= posts[i]._id%>"> <!-- Anchor Tag Holding Each Post -->
-                <img class="img-fluid" src="<%= posts[i].image%>"> <!-- Image Element That Holds 'Posts' -->
+        <div class="profile-imgs border border-danger">
+           <% for(var i=0; i<posts.length; i++) { %> <!-- For Loop Getting All Posts -->
+              <a href="/post/<%= posts[i]._id%>" class="col"> <!-- Anchor Tag Holding Each Post -->
+                <img class="img-fluid rounded" src="<%= posts[i].image%>"> <!-- Image Element That Holds 'Posts' -->
               </a> 
-            </li> 
-          <% } %> 
-          </ul> 
-        </div>  
-        <!-- RETURN TO FEED BUTTON -->
-        <div class="row justify-content-center mt-5"> 
-          <a class="btn btn-primary" href="/feed">Return to Feed</a> 
-        </div> 
-      </div> 
-    </div>
-  </div> 
+            <% } %> 
+        </div>
+      </div>
+      </main> 
   <!-- FOOTER -->
   <%- include('partials/footer') -%> 
 </body>

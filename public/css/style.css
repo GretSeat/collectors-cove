@@ -13,3 +13,14 @@ body {
 .background-color {
   background-color: lightgoldenrodyellow;
 }
+@media screen and (max-width: 991.98px) {
+  .profile {
+    flex-flow: column wrap;
+  }
+  .post-container {
+    width: 100%;
+  }
+  .profile-imgs {
+    width: 100%;
+  }
+}
