@@ -52,8 +52,8 @@
               <h4>Upload a photo?</h4> 
               <form action="/post/createPost" enctype="multipart/form-data" method="POST"> 
                 <div class="mb-3"> 
-                    <!-- <label for="title" class="form-label"></label> Title Label for Input -->
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Title"> <!-- Input for adding the Post Title -->
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Add a cool title"> <!-- Input for adding the Post Title -->
                 </div> 
                 <div class="mb-3"> 
                   <label for="caption" class="form-label">Caption</label> 
@@ -63,11 +63,11 @@
                   <label for="imageUpload" class="form-label">Image</label> <!-- Image Label for Input-->
                   <input type="file" class="form-control" id="imageUpload" name="file"> <!-- Input Area for Image Upload-->
                 </div> 
-                <!-- RETURN TO FEED BUTTON -->
+                <!-- RETURN TO FEED BUTTON / POST -->
                 <div class="d-flex justify-content-around"> 
                   <a class="btn btn-primary" href="/feed">Return to Feed</a> 
                   <button type="submit" class="btn btn-primary" value="Upload">Post Now</button>
-              </div>  
+                </div>  
               </form> 
             </div> 
         </div>         
