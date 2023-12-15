@@ -38,6 +38,7 @@
           <h2><%= post.title %></h2>
           <img class="img-fluid" src="<%= post.image%>" />
           <div class="row justify-content-between">
+            <!-- LIKE BUTTON -->
             <form
               class="col-1"
               action="/post/likePost/<%= post.id %>?_method=PUT"
@@ -50,6 +51,7 @@
             </form>
             <h3 class="col-3">Likes: <%= post.likes %></h3>
             <%if(post.user == user.id){ %>
+              <!-- DELETE BUTTON -->
             <form
               action="/post/deletePost/<%= post.id %>?_method=DELETE"
               method="POST"
