@@ -4,7 +4,7 @@ This is a place for Board Game Collectors to get together, and share photos with
 
 **Link to project:** https://collectors-cove.onrender.com/
 
-![alt tag](/public/imgs/collector's%20cove.png)
+![alt tag](/public/imgs/collectorscovemain.png)
 
 ## How It's Made:
 
