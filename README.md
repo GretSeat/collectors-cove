@@ -7,6 +7,7 @@ This is a place for Board Game Collectors to get together, and share photos with
 ![Collector's Cove Main Image](/public/imgs/collectorscovemain.png)
 ![Collector's Cove Login Image](/public/imgs/cclogin.png)
 ![Collector's Cove Sign Up Image](/public/imgs/ccsignup.png)
+![Collector's Cove Feed Image](/public/imgs/ccfeed.png)
 
 ## How It's Made:
 
