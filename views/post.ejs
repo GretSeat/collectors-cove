@@ -29,17 +29,22 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <body>
+  <body class="background-color">
     <%- include('partials/navbar') -%>
 
-    <div class="container border border-danger">
-      <div class="row justify-content-center mt-5">
-        <div class="col-6">
-          <h2><%= post.title %></h2>
-          <img class="img-fluid" src="<%= post.image%>" />
-          <div class="row justify-content-between">
+    <main class="container" style="padding-top: 70px">
+      <div class="card">
+        <!-- Image and Buttons -->
+        <div class="card-body">
+          <div class="card-header">
+            <h2 class="card-title text-center"><%= post.title %></h2>
+          </div>
+          
+          <img class="img-fluid card-img" src="<%= post.image%>" />
+          <div class="d-flex justify-content-around">
             <!-- LIKE BUTTON -->
-            <form
+            <div class="d-flex justify-content-between">
+              <form
               class="col-1"
               action="/post/likePost/<%= post.id %>?_method=PUT"
               method="POST"
@@ -49,10 +54,13 @@
                 type="submit"
               ></button>
             </form>
-            <h3 class="col-3">Likes: <%= post.likes %></h3>
+            <h3 class="">Likes: <%= post.likes %></h3>
             <%if(post.user == user.id){ %>
-              <!-- DELETE BUTTON -->
-            <form
+            </div>
+            
+            <!-- DELETE BUTTON -->
+            <div>
+              <form
               action="/post/deletePost/<%= post.id %>?_method=DELETE"
               method="POST"
               class="col-3"
@@ -63,17 +71,19 @@
               ></button>
             </form>
             <%}%>
+            </div>
+            
           </div>
         </div>
-
-        <div class="col-3 mt-5">
-          <p><%= post.caption %></p>
+        <!-- CAPTION -->
+        <div class="card-body">
+          <p class="card-text"><%= post.caption %></p>
         </div>
         <!-- ADD A COMMENT -->
-        <div class="mt-5 border border-danger">
+        <div class="card-body">
           <h2>Add a Comment</h2>
           <form action="/comment/createComment/<%= post._id %>" method="POST">
-            <div class="mb-3">
+            <div class="">
               <label for="title" class="form-label">Comment</label>
               <input
                 type="text"
@@ -88,16 +98,16 @@
           </form>
         </div>
         <!-- COMMENTS -->
-        <ul>
+        <ul class="list-group list-group-flush">
           <% for(var i=0; i < comments.length; i++) { %>
-          <li class="col-6 justify-content-between mt-5 list-unstyled">
+          <li class="list-unstyled list-group-item">
             <%= comments[i].comment %>
           </li>
           <% } %>
         </ul>
 
         <!-- BUTTONS -->
-        <div class="col-6 mt-5">
+        <div class="card-footer d-flex justify-content-around">
           <a class="btn btn-primary" href="/profile">Return to Profile</a>
           <a class="btn btn-primary" href="/feed">Return to Feed</a>
         </div>
