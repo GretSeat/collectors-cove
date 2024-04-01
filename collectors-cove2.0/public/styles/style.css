@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+}
+.background-image {
+  background-image: url(https://images.pexels.com/photos/6333900/pexels-photo-6333900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px);
+}
+.background-color {
+  background-color: lightgoldenrodyellow;
+}
+@media screen and (max-width: 991.98px) {
+  .profile {
+    flex-flow: column wrap;
+  }
+  .post-container {
+    width: 100%;
+  }
+  .profile-imgs {
+    width: 100%;
+  }
+}
